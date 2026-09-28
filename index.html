@@ -6,7 +6,7 @@ header{background:var(--ink);color:#fff;padding:28px max(20px,calc((100% - 1000p
 main{max-width:1000px;margin:0 auto;padding:22px 20px 80px}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.toc a{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 12px;color:var(--ink);text-decoration:none;font-size:14px}.toc a:hover{background:var(--y)}
 .top{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
-button{font:600 14px inherit;font-family:inherit;background:var(--ink);color:var(--y);border:0;border-radius:99px;padding:9px 18px;cursor:pointer}button.ok{background:#2e7d32;color:#fff}
+button,.btn{font:600 14px inherit;font-family:inherit;background:var(--ink);color:var(--y);border:0;border-radius:99px;padding:9px 18px;cursor:pointer;text-decoration:none;display:inline-block}button.ok{background:#2e7d32;color:#fff}.btn.xl{background:#1d6f42;color:#fff}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
 .hd{display:flex;gap:14px;align-items:flex-start}.hd>div{flex:1}.hd h2{margin:0;font-size:20px}.id{background:var(--y);font-weight:800;border-radius:10px;padding:8px 12px;min-width:52px;text-align:center}
 .meta{color:#6b6963;font-size:14px}.what{margin:12px 0 8px;color:#3b3a37}
@@ -20,8 +20,8 @@ h2.sec{font-size:22px;margin:34px 0 10px}.note{background:#fff8d8;border:1px sol
 <header><h1>Workshop prompt library</h1><p>All the prompts for the managers' day, in the order they are used. Yellow text in [square brackets] is what the person replaces. The wording says contradiction and insight, to match the deck.</p></header>
 <div id="gohere">Jump to your prompt &darr;</div>
 <main>
-<div class="top"><button id="all">Copy all prompts</button><span>16 prompts &middot; 13 on the day, 3 optional</span></div>
-<nav class="toc"><a href="#p1A"><b>1A</b> Fact-Check Prompt — look at the survey</a><a href="#p1B"><b>1B</b> Coms Pattern Prompt — look at your own work</a><a href="#p2"><b>2</b> Stress-Test Prompt — challenge our explanation</a><a href="#p3"><b>3</b> Persona Interview Prompt</a><a href="#p4"><b>4</b> Opportunity Finder Prompt — widen, then narrow</a><a href="#p5"><b>5</b> Solution Design Prompt — design the loop</a><a href="#p5B"><b>5B</b> Build Plan Prompt</a><a href="#p5C"><b>5C</b> Learning Plan Prompt</a><a href="#p6A"><b>6A</b> Leadership Mirror Prompt (private)</a><a href="#p6C"><b>6C</b> Talk-Track Prompt</a><a href="#p6D"><b>6D</b> Recording Audit Prompt</a><a href="#p6E"><b>6E</b> 30-Day Plan Prompt</a><a href="#p7"><b>7</b> Skills Map Prompt (homework)</a><a href="#pRED"><b>RED</b> Sharpen a red card</a><a href="#p6B"><b>6B</b> Tailor up and down (take-home)</a><a href="#p6D+"><b>6D+</b> Second persona (take-home)</a><a href="#agent"><b>Agent</b> instructions draft</a></nav>
+<div class="top"><button id="all">Copy all prompts</button><a class="btn xl" href="https://github.com/dm-cannon/lenovo-workshop-prompts/releases/download/survey-v1/survey.xlsx" download>Download the survey (Excel)</a><span>16 prompts &middot; 13 on the day, 3 optional</span></div>
+<nav class="toc"><a href="#p1A"><b>1A</b> Fact-Check Prompt — look at the survey</a><a href="#p1B"><b>1B</b> Coms Pattern Prompt — look at your own work</a><a href="#p2"><b>2</b> Stress-Test Prompt — challenge our explanation</a><a href="#p3"><b>3</b> Persona Interview Prompt</a><a href="#p4"><b>4</b> Opportunity Finder Prompt — widen, then narrow</a><a href="#p5"><b>5</b> Solution Design Prompt — design the loop</a><a href="#p5B"><b>5B</b> Build Plan Prompt</a><a href="#p5C"><b>5C</b> Learning Plan Prompt</a><a href="#p6A"><b>6A</b> Leadership Mirror Prompt (private)</a><a href="#p6C"><b>6C</b> Talk-Track Prompt</a><a href="#p6D"><b>6D</b> Recording Audit Prompt</a><a href="#p6E"><b>6E</b> 30-Day Plan Prompt</a><a href="#p7"><b>7</b> Skills Map Prompt (homework)</a><a href="#pRED"><b>RED</b> Sharpen a red card</a><a href="#p6B"><b>6B</b> Tailor up and down (take-home)</a><a href="#p6D+"><b>6D+</b> Second persona (take-home)</a></nav>
 <section class="card" id="p1A"><div class="hd"><span class="id">1A</span><div><h2>Fact-Check Prompt — look at the survey</h2><div class="meta">10:31 &middot; Each pair, on the team&#x27;s contradiction</div></div><button data-copy="1A">Copy</button></div><p class="what">Attach the survey Excel first (type /). Finds evidence in the file and lists what the data cannot tell us.</p><pre id="t1A">
 You are a people-analytics partner helping a people manager at Lenovo Malaysia understand a team survey.
 
@@ -351,39 +351,6 @@ Up, to my own leader
 Down, to my team
 4. From what my team has raised with me in the last 90 days (questions, requests, concerns about workload, tools or AI), what should my approach take into account? Patterns, not individuals.
 5. Given how I tend to communicate (from the self-audit), what should I do more of, or differently, when I introduce this?</textarea></section><section class="card" id="p6D+"><div class="hd"><span class="id">6D+</span><div><h2>Second persona (take-home)</h2><div class="meta">after the day &middot; Each person</div></div><button data-copy="6D+">Copy</button></div><p class="what">Optional. Run 6C and 6D again for a second type of person, then compare.</p><pre id="t6D+">Now I will do the same for a second persona: <mark>[PERSONA 2]</mark>. Compare the two reviews. What do I do well with both, and what habit keeps showing up that I need to fix?</pre><textarea id="raw6D+" hidden>Now I will do the same for a second persona: [PERSONA 2]. Compare the two reviews. What do I do well with both, and what habit keeps showing up that I need to fix?</textarea></section>
-<h2 class="sec" id="agent">Draft instructions for the Copilot agent</h2>
-<div class="note"><b>Check the limit before you paste.</b> Declarative agent instructions have a character limit (I believe 8,000; please check Microsoft's current figure). All the prompts together are much longer, so keep the full prompts in a knowledge file and let the instructions point to it. This draft is about 1538 characters. It is yours to edit.</div>
-<div class="card"><div class="hd"><div><h2>Instructions</h2><div class="meta">Paste into the agent's Instructions field</div></div><button data-copy="INSTR">Copy</button></div><pre id="tINSTR">You are the Lenovo AI Leadership Lab workshop coach for people managers. Many users use English as a second language: write short, plain sentences. Avoid idioms and abbreviations.
-
-The user works through named steps during one day: 1A, 1B, 2, 3, 4, 5, 5B, 5C, 6A, 6C, 6D, 6E, 7. Two optional steps are RED (sharpen a red card) and 6B. The full prompt for each step is in the knowledge file &quot;Lenovo workshop prompts&quot;.
-
-How to work:
-1. When the user names a step, find that prompt in the knowledge file and run it exactly as written.
-2. Fill each [BRACKET] from what the user has already told you in this conversation. Ask only for what is missing, one short question at a time.
-3. Keep the whole conversation open. Remember the outputs of earlier steps: the team contradiction, the insight, the persona, the chosen ideas, the designed solution, the build plan. Reuse them so the user does not have to paste them again.
-4. If the user has not said which step they are on, ask, and list the steps in one line each.
-
-Rules for every answer:
-- Use only the sources the prompt names. Show the source for every fact. If you cannot find something, say &quot;not found&quot;.
-- Every number must come from the attached file. Show any calculation. Label your own interpretation as &quot;Interpretation&quot;.
-- Look for patterns, not people. Never profile or judge a named colleague. For step 6A use only messages the user sent.
-- The first answer is a draft. After each answer offer one follow-up question.
-- Keep answers short. Put the answer first, then the limits.</pre><textarea id="rawINSTR" hidden>You are the Lenovo AI Leadership Lab workshop coach for people managers. Many users use English as a second language: write short, plain sentences. Avoid idioms and abbreviations.
-
-The user works through named steps during one day: 1A, 1B, 2, 3, 4, 5, 5B, 5C, 6A, 6C, 6D, 6E, 7. Two optional steps are RED (sharpen a red card) and 6B. The full prompt for each step is in the knowledge file &quot;Lenovo workshop prompts&quot;.
-
-How to work:
-1. When the user names a step, find that prompt in the knowledge file and run it exactly as written.
-2. Fill each [BRACKET] from what the user has already told you in this conversation. Ask only for what is missing, one short question at a time.
-3. Keep the whole conversation open. Remember the outputs of earlier steps: the team contradiction, the insight, the persona, the chosen ideas, the designed solution, the build plan. Reuse them so the user does not have to paste them again.
-4. If the user has not said which step they are on, ask, and list the steps in one line each.
-
-Rules for every answer:
-- Use only the sources the prompt names. Show the source for every fact. If you cannot find something, say &quot;not found&quot;.
-- Every number must come from the attached file. Show any calculation. Label your own interpretation as &quot;Interpretation&quot;.
-- Look for patterns, not people. Never profile or judge a named colleague. For step 6A use only messages the user sent.
-- The first answer is a draft. After each answer offer one follow-up question.
-- Keep answers short. Put the answer first, then the limits.</textarea></div>
 </main>
 <script>
 document.querySelectorAll('button[data-copy]').forEach(b=>b.onclick=async()=>{const t=document.getElementById('raw'+b.dataset.copy).value;try{await navigator.clipboard.writeText(t);}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById('t'+b.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');}const o=b.textContent;b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent=o;b.classList.remove('ok')},1400);});
